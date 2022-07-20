@@ -2,7 +2,7 @@
 
 ### Alternate Solution 1 (Procedural approach)
 ```js
-function largestOfFour1(arr) {
+function largestOfFour(arr) {
   const results = [];
   for (let i = 0; i < arr.length; i++) {
     let largestNumber = arr[i][0];
@@ -31,7 +31,7 @@ function largestOfFour1(arr) {
 
 ### Alternate Solution 2 (Declarative approach)
 ```js
-function largestOfFour2(arr) {
+function largestOfFour(arr) {
   return arr.map(function (group) {
     return group.reduce(function (prev, current) {
       return current > prev ? current : prev;
@@ -53,7 +53,7 @@ function largestOfFour2(arr) {
 
 ### Alternate Solution 3 (Declarative approach):
 ```js
-function largestOfFour3(arr) {
+function largestOfFour(arr) {
   return arr.map(Function.apply.bind(Math.max, null));
 }
 ```
