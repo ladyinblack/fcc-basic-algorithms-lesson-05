@@ -72,7 +72,7 @@ Alas, it doesn't.
 i.e. `Math.max.apply(null, [9, 43, 20, 6]);` would invoke something like a Math.max method.  What we're looking for...almost.
 
 Here we're passing `null` as the context of the `Function.prototype.apply` method as `Math.max` doesn't need any context.
-- Since `arr.map` expects a callback function, not just an expression, we create a function out of the previous expression by using the `Function.bind method.
+- Since `arr.map` expects a callback function, not just an expression, we create a function out of the previous expression by using the `Function.bind` method.
 - Since, `Function.prototype.apply` is a *static method* of the same Function object, we can call `Function.prototype.bind` on `Function.prototype.apply` i.e. `Function.prototype.apply.bind`.
 - Now we pass the *context* for the `Function.prototype.apply.bind` call (in this case we want `Math.max` so we can gain its functionality).
 - Since the embedded `Function.prototype.apply` method will also require a context as it's 1st argument, we need to pass it a bogus *context*.
